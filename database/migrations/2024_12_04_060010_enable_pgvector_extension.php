@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -11,13 +12,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('market_categories', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-            $table->string('title');
-            $table->boolean('is_active')->default(true);
-            $table->integer('sort')->default(100);
-        });
+        DB::statement('CREATE EXTENSION IF NOT EXISTS "vector";');
     }
 
     /**
@@ -25,6 +20,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('market_categories');
+        DB::statement('DROP EXTENSION IF EXISTS "vector";');
     }
 };

@@ -14,6 +14,9 @@ return new class extends Migration
         Schema::create('vehicle_sizes', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('title');
+            $table->boolean('is_active')->default(true);
+            $table->integer('sort')->default(100);
         });
     }
 

@@ -14,6 +14,13 @@ return new class extends Migration
         Schema::create('car_models', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('title');
+            $table->foreignId('car_mark_id')
+                ->nullable()
+                ->constrained('car_marks')
+                ->nullOnDelete();
+            $table->boolean('is_active')->default(true);
+            $table->integer('sort')->default(100);
         });
     }
 
