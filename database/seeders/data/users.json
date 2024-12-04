@@ -1,0 +1,29 @@
+[
+    {
+        "id": 1,
+        "name": "Admin",
+        "lastname": "Adminov",
+        "email": "admin@test.ru",
+        "phone": "+79231234555",
+        "password": "test",
+        "group_id": 1
+    },
+    {
+        "id": 2,
+        "name": "Ivan",
+        "lastname": "Ivanov",
+        "email": "ivanov@test.ru",
+        "phone": "+79231232568",
+        "password": "test",
+        "group_id": 2
+    },
+    {
+        "id": 3,
+        "name": "Petr",
+        "lastname": "Petrov",
+        "email": "petrov@test.ru",
+        "phone": "+79231232569",
+        "password": "test",
+        "group_id": 2
+    }
+]
