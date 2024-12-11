@@ -4,6 +4,11 @@ namespace App\Modules\Catalog\Car\Models;
 
 use App\Modules\Catalog\Reference\Models\CarMark;
 use App\Modules\Catalog\Reference\Models\CarModel;
+use App\Modules\Catalog\Reference\Models\DrivenWheel;
+use App\Modules\Catalog\Reference\Models\MarketCategory;
+use App\Modules\Catalog\Reference\Models\TransmissionType;
+use App\Modules\Catalog\Reference\Models\VehicleSize;
+use App\Modules\Catalog\Reference\Models\VehicleStyle;
 use Illuminate\Database\Eloquent\Model;
 
 class Car extends Model
@@ -33,4 +38,30 @@ class Car extends Model
     {
         return $this->belongsTo(CarModel::class);
     }
+
+    public function transmissionType()
+    {
+        return $this->belongsTo(TransmissionType::class);
+    }
+
+    public function drivenWheel()
+    {
+        return $this->belongsTo(DrivenWheel::class);
+    }
+
+    public function marketCategory()
+    {
+        return $this->belongsTo(MarketCategory::class);
+    }
+
+    public function vehicleSize()
+    {
+        return $this->belongsTo(VehicleSize::class);
+    }
+
+    public function vehicleStyle()
+    {
+        return $this->belongsTo(VehicleStyle::class);
+    }
+
 }
